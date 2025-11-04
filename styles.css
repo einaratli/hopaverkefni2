@@ -1,0 +1,84 @@
+/* GRUNN Skipulag og Skalanleiki */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    min-height: 100vh; /* Nauðsynlegt til að ýta fætinum niður */
+    display: flex;
+    flex-direction: column; 
+}
+
+/* HEADER Stílar */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 5%; /* Padding á hliðum */
+    width: 100%;
+    box-sizing: border-box; 
+}
+header h1 {
+    margin: 0;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* AÐAL CONTAINER (page-container) sem tryggir miðlægt skalanlegt innihald */
+#page-container {
+    flex-grow: 1; /* Leyfir container að taka upp allt laust pláss */
+    width: 90%; /* Grunnbreddi á litlum skjám (t.d. 450px) */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1600px; /* Hámarksbreidd */
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVIGATION (Valmynd) Stílar */
+nav ul {
+    list-style: none;
+    padding: 15px 0 10px 0;
+    margin: 0;
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px;
+}
+nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    display: block;
+}
+
+/* MAIN CONTENT Stílar */
+main {
+    flex-grow: 1; /* Tekur upp plássið milli valmyndar og fótar */
+    padding: 20px;
+    background-color: white;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+/* Aðgerða hlekkur stíll */
+.action-link {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+/* FOOTER Stílar */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto; /* Ýtir fætinum niður */
+}
