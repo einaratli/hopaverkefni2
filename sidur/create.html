@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Búa til spurningar</title>
+  <link rel="stylesheet" href="../styles.css" />
+    <script src="js/create.js" defer></script>
+
+  <style>
+    form .field { margin-bottom: 1rem; }
+    form label { display:block; font-weight:600; margin-bottom:.25rem; }
+    form input, form textarea { width:100%; padding:.5rem; }
+    .notice { margin-top:1rem; }
+    .list { margin-top:2rem; }
+    .list-item { padding:.5rem 0; border-bottom:1px solid #eee; }
+    .list-item small { color:#666; }
+  </style>
+</head>
+<body>
+  <header><h1>Spurningar Vefur</h1></header>
+
+  <div id="page-container">
+    <nav>
+      <ul>
+        <li><a href="../index.html">Forsíða</a></li>
+        <li class="active"><a href="create.html" aria-current="page">Búa til spurningar</a></li>
+        <li><a href="view.html">Birta spurningar</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h2>Búa til og vista spurningar</h2>
+
+      <form id="question-form">
+        <div class="field">
+          <label for="q">Spurning</label>
+          <textarea id="q" rows="3" placeholder="Skrifaðu spurninguna" required></textarea>
+        </div>
+        <div class="field">
+          <label for="a">Svar</label>
+          <textarea id="a" rows="3" placeholder="Skrifaðu svarið" required></textarea>
+        </div>
+        <button type="submit">Vista spurningu</button>
+        <button type="button" id="clearAll" style="margin-left:.5rem">Hreinsa allar geymdar</button>
+        <p class="notice" id="msg" aria-live="polite"></p>
+      </form>
+
+      <section class="list">
+        <h3>Vistaðar spurningar (úr localStorage)</h3>
+        <div id="saved-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>© 2025 Spurningavefur | Hannaður af Einari Atla og Ólafi Breka</p>
+  </footer>
+</body>
+</html>
+
