@@ -121,3 +121,68 @@ footer {
     background-color: #ccc;
     cursor: not-allowed;
 }
+
+/* ====== CREATE PAGE ====== */
+form .field { margin-bottom: 1rem; }
+form label { display:block; font-weight:600; margin-bottom:.25rem; }
+form input, form textarea {
+    width: 100%;
+    padding: .5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+form textarea { min-height: 110px; }
+
+.notice { margin-top: .75rem; color: #155724; }
+.notice:empty { display:none; }
+
+.list { margin-top: 1.25rem; }
+.list-item {
+    padding: .5rem 0;
+    border-bottom: 1px solid #eee;
+}
+.list-item small { color: #666; }
+
+button {
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+button:focus { outline: 2px solid #333; outline-offset: 2px; }
+
+form button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 16px;
+}
+#clearAll {
+    background-color: #6c757d;
+    color: #fff;
+    padding: 10px 16px;
+}
+
+nav li.active a,
+nav a[aria-current="page"] {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+#quiz-area { margin-top: 1rem; }
+#status-text { min-height: 1.25rem; }
+
+.navigation-buttons button:not(:disabled):hover,
+#startButton:hover, #restartButton:hover,
+form button[type="submit"]:hover, #clearAll:hover {
+    filter: brightness(0.95);
+}
+
+@media (min-width: 700px) {
+    form .field--row {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        align-items: start;
+        gap: .75rem;
+    }
+    form .field--row label { margin-top: .4rem; }
+}
