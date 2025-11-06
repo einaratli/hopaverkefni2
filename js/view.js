@@ -2,14 +2,23 @@
 const STORAGE_KEY = 'spurningar';
 
 /**
- * Les spurningar úr Local Storage.
+ * Stokkar fylki í tilviljanakenndri röð (Fisher-Yates algrími).
+ * @param {Array} array Fylki til að stokka.
  */
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Skiptir um stað
+    }
+}
+
+// ... (readStoredQuestions, writeStoredQuestions, og initializeQuestions föllin eru óbreytt) ...
+
 function readStoredQuestions() {
     try {
         const raw = localStorage.getItem(STORAGE_KEY);
         if (!raw) return [];
         const parsed = JSON.parse(raw);
-        // Síum út til að tryggja að spurningar hafi lágmarksgögn (q og a)
         return Array.isArray(parsed) ? parsed.filter(x => x && x.q && x.a) : [];
     } catch (e) {
         console.error('Gat ekki lesið spurningar úr Local Storage.', e);
@@ -17,25 +26,13 @@ function readStoredQuestions() {
     }
 }
 
-/**
- * Vistar spurningar í Local Storage.
- */
 function writeStoredQuestions(arr) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
 }
 
-
-/**
- * Athugar hvort spurningar séu í Local Storage. 
- * Ef Local Storage er tómt og allQuestions (úr spurningar.js) er til, 
- * þá forhleður þetta fall spurningunum.
- * ATH: Þarf að keyra eftir að spurningar.js hefur hlaðist.
- * @returns {Array} Spurningalistinn
- */
 function initializeQuestions() {
   const existing = readStoredQuestions();
   
-  // Athugum hvort allQuestions sé skilgreint áður en við reynum að forhlaða
   if (typeof allQuestions !== 'undefined' && existing.length === 0) {
     
     const initialQuestions = allQuestions.map(q => ({
@@ -63,8 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const quizFinished = document.getElementById('quiz-finished');
     const restartButton = document.getElementById('restartButton');
     
-    // KEY VIRKNI: Hleður spurningum, forhleður ef þarf
+    // KEY BREYTING HÉR
+    // Hleðum spurningum, forhleðum ef þarf
     const questions = initializeQuestions(); 
+    
+    // Stokkum spurningalistann til að fá slembna röð
+    shuffleArray(questions); 
+    
     let currentQuestionIndex = -1;
 
     // Sýnir hleðslustöðu
@@ -77,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startButton.style.display = 'block';
     }
 
-
+    // ... (restin af fallinu er óbreytt) ...
     function displayAnswer(show = false) {
         if (currentQuestionIndex < 0 || currentQuestionIndex >= questions.length) return;
         const currentQ = questions[currentQuestionIndex];
@@ -128,6 +130,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startQuiz() {
+        // Ef notandi ýtir á Restart, stokkum við aftur
+        if (currentQuestionIndex === questions.length) {
+            shuffleArray(questions);
+        }
         currentQuestionIndex = 0;
         displayQuestion();
         startButton.style.display = 'none';
@@ -136,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Viðburðarstjórar
     startButton.addEventListener('click', startQuiz);
-    restartButton.addEventListener('click', startQuiz);
+    restartButton.addEventListener('click', startQuiz); // Stokk fylkið ef þetta er "Byrja aftur"
     prevButton.addEventListener('click', goToPrevQuestion);
     nextButton.addEventListener('click', goToNextQuestion);
 });
