@@ -1,57 +1,61 @@
 <!DOCTYPE html>
 <html lang="is">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spurningar - Skoða</title>
-    <link rel="stylesheet" href="../styles.css">
-        <script src="../js/spurningar.js"></script>
-        <script src="../js/view.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spurningar - Skoða</title>
+  <link rel="stylesheet" href="../styles.css">
+  <!-- Load defaults first (defines allQuestions), then view logic -->
+  <script src="js/spurningar.js" defer></script>
+  <script src="js/view.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Spurningar Vefur</h1>
-    </header>
+  <header>
+    <h1>Spurningar Vefur</h1>
+  </header>
 
-    <div id="page-container">
-        
-        <nav>
-            <ul>
-                <li><a href="../index.html">Forsíða</a></li>
-                <li><a href="create.html">Búa til spurningar</a></li>
-                <li class="active"><a href="view.html" aria-current="page">Birta spurningar</a></li>
-            </ul>
-        </nav>
+  <div id="page-container">
+    <nav>
+      <ul>
+        <li><a href="../index.html">Forsíða</a></li>
+        <li><a href="create.html">Búa til spurningar</a></li>
+        <li class="active"><a href="view.html" aria-current="page">Birta spurningar</a></li>
+      </ul>
+    </nav>
 
-        <main>
-            <h2>Spurningaflettir</h2>
-            
-            <div id="quiz-area">
-                <p id="load-status">Hleður spurningum...</p>
-                <button id="startButton">Byrja að birta spurningar</button> 
-                
-                <div id="question-display">
-                    <p id="question-text">Spurning:</p>
-                    <p id="answer-text">Sýna svar</p>
-                    <p id="status-text"></p>
-                    
-                    <div class="navigation-buttons">
-                        <button id="prevButton" disabled>← Fyrri spurning</button>
-                        <button id="nextButton" disabled>Næsta spurning →</button>
-                    </div>
-                </div>
-                
-                <div id="quiz-finished">
-                    <h3>Spurningalisti kláraður!</h3>
-                    <button id="restartButton">Byrja aftur</button>
-                </div>
-            </div>
-            
-        </main>
-    </div>
+    <main>
+      <h2>Spurningaflettir</h2>
 
-    <footer>
-        <p>© 2025 Spurningar Vefur | Hannaður af Einari Atla og Ólafi Breka</p>
-    </footer>
+      <div id="quiz-area">
+        <p id="load-status">Hleður spurningum...</p>
+        <button id="startButton">Byrja að birta spurningar</button>
+
+        <!-- Hide until quiz starts -->
+        <div id="question-display" style="display:none">
+          <p id="question-text">Spurning:</p>
+
+          <!-- Make this a button so it’s clickable & accessible -->
+          <button id="answer-text" type="button" class="reveal">Sýna svar</button>
+
+          <p id="status-text"></p>
+
+          <div class="navigation-buttons">
+            <button id="prevButton" disabled>← Fyrri spurning</button>
+            <button id="nextButton" disabled>Næsta spurning →</button>
+          </div>
+        </div>
+
+        <!-- Hide until finished -->
+        <div id="quiz-finished" style="display:none">
+          <h3>Spurningalisti kláraður!</h3>
+          <button id="restartButton">Byrja aftur</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <p>© 2025 Spurningar Vefur | Hannaður af Einari Atla og Ólafi Breka</p>
+  </footer>
 </body>
 </html>
