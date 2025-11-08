@@ -1,0 +1,48 @@
+@use "variables" as *;
+
+button {
+  cursor: pointer;
+  border-radius: $radius-md;
+  border: none;
+
+  &:focus {
+    outline: 2px solid $gray-900;
+    outline-offset: 2px;
+  }
+}
+
+#startButton,
+#restartButton {
+  background-color: $brand-green;
+  color: $white;
+  display: block;
+  margin: 20px auto;
+  padding: 15px 30px;
+  font-size: 1.2em;
+}
+
+.navigation-buttons {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid $gray-300;
+
+  button {
+    background-color: $brand-blue;
+    color: $white;
+    padding: 10px 15px;
+    border-radius: $radius-sm;
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.navigation-buttons button:not(:disabled):hover,
+#startButton:hover,
+#restartButton:hover,
+form button[type="submit"]:hover,
+#clearAll:hover {
+  filter: brightness(0.95);
+}

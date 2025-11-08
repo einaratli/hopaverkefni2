@@ -1,0 +1,18 @@
+@use "variables" as *;
+
+main {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: $white;
+  margin-bottom: 20px;
+  border: 1px solid $gray-300;
+}
+
+.action-link {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: $brand-blue;
+  color: $white;
+  text-decoration: none;
+  margin-top: 15px;
+}

@@ -1,0 +1,252 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 5%;
+  width: 100%;
+  box-sizing: border-box;
+}
+header h1 {
+  margin: 0;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#page-container {
+  flex-grow: 1;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1600px;
+  display: flex;
+  flex-direction: column;
+}
+
+nav ul {
+  list-style: none;
+  padding: 15px 0 10px;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  display: block;
+}
+nav li.active a,
+nav a[aria-current=page] {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+main {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+}
+
+.action-link {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: auto;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+button:focus {
+  outline: 2px solid #333;
+  outline-offset: 2px;
+}
+
+#startButton,
+#restartButton {
+  background-color: #28a745;
+  color: #fff;
+  display: block;
+  margin: 20px auto;
+  padding: 15px 30px;
+  font-size: 1.2em;
+}
+
+.navigation-buttons {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+}
+.navigation-buttons button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+.navigation-buttons button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.navigation-buttons button:not(:disabled):hover,
+#startButton:hover,
+#restartButton:hover,
+form button[type=submit]:hover,
+#clearAll:hover {
+  filter: brightness(0.95);
+}
+
+#quiz-area {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#question-display,
+#quiz-finished {
+  display: none;
+}
+
+#startButton {
+  display: none;
+}
+
+#question-display {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+#question-text {
+  font-size: 1.1em;
+  font-weight: bold;
+  min-height: 50px;
+}
+
+#answer-text {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #007bff;
+  cursor: pointer;
+  border-top: 1px solid #eee;
+  padding-top: 5px;
+}
+
+#status-text {
+  min-height: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.navigation-buttons {
+  margin-top: 1rem;
+}
+
+#prevButton,
+#nextButton {
+  padding: 10px;
+}
+
+#prevButton {
+  margin-right: 10px;
+}
+
+form .field {
+  margin-bottom: 1rem;
+}
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+form textarea {
+  min-height: 110px;
+}
+form button[type=submit] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 16px;
+}
+
+.notice {
+  margin-top: 0.75rem;
+  color: #155724;
+}
+.notice:empty {
+  display: none;
+}
+
+.list {
+  margin-top: 1.25rem;
+}
+.list .list-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+.list .list-item small {
+  color: #666;
+}
+
+#clearAll {
+  background-color: #6c757d;
+  color: #fff;
+  padding: 10px 16px;
+}
+
+@media (min-width: 700px) {
+  form .field-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: start;
+    gap: 0.75rem;
+  }
+  form .field-row label {
+    margin-top: 0.4rem;
+  }
+}
+#quiz-area {
+  margin-top: 1rem;
+}
+
+#status-text {
+  min-height: 1.25rem;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,58 @@
+@use "variables" as *;
+
+form {
+  .field { margin-bottom: 1rem; }
+  label { display: block; font-weight: 600; margin-bottom: .25rem; }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: .5rem;
+    border: 1px solid $gray-400;
+    border-radius: $radius-sm;
+    box-sizing: border-box;
+  }
+
+  textarea { min-height: 110px; }
+
+  button[type="submit"] {
+    background-color: $brand-blue;
+    color: $white;
+    padding: 10px 16px;
+  }
+}
+
+.notice {
+  margin-top: .75rem;
+  color: #155724;
+
+  &:empty { display: none; }
+}
+
+.list {
+  margin-top: 1.25rem;
+
+  .list-item {
+    padding: .5rem 0;
+    border-bottom: 1px solid $gray-200;
+
+    small { color: $gray-700; }
+  }
+}
+
+#clearAll {
+  background-color: $gray-600;
+  color: $white;
+  padding: 10px 16px;
+}
+
+@media (min-width: 700px) {
+  form .field-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: start;
+    gap: .75rem;
+
+    label { margin-top: .4rem; }
+  }
+}

@@ -1,5 +1,4 @@
-
-const allQuestions = [
+window.allQuestions = [
   { "q": "Hvað heitir 1.stig kenninga Piagets um þroskun hugsunar/vitsmuna", "a": "Skynhreyfistig", "category": "Félags og sálfræði", "level": 2 },
   { "q": "Hvað heitir 2.stig kenninga Piagets um þroskun hugsunar/vitsmuna", "a": "Foraðgerðastig", "category": "Félags og sálfræði", "level": 2 },
   { "q": "Hvað heitir 3.stig kenninga Piagets um þroskun hugsunar/vitsmuna", "a": "Hlutbundnar Aðgerðir", "category": "Félags og sálfræði", "level": 2 },
@@ -117,4 +116,4 @@ const allQuestions = [
   { "q": "Í hvaða lagi eftir sjálfan sig notar Snow sama text og í \"Lonely Monday Mornings\"", "a": "Informer", "category": "Tónlist", "level": 3 },
   { "q": "Hvað hét hljómborðsleikarinn í Prodigy", "a": "Liam Howlett", "category": "Tónlist", "level": 2 },
   { "q": "Hvað var eina konan í Prodigy kölluð", "a": "Sharky", "category": "Tónlist", "level": 3 }
-];
+].map(q => ({ ...q, points: q.points ?? q.level ?? 1 }));

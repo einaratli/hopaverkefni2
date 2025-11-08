@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spurningar - Skoða</title>
-  <link rel="stylesheet" href="../styles.css">
-  <!-- Load defaults first (defines allQuestions), then view logic -->
+<link rel="stylesheet" href="../dist/css/main.css">
   <script src="js/spurningar.js" defer></script>
   <script src="js/view.js" defer></script>
 </head>
@@ -30,11 +29,9 @@
         <p id="load-status">Hleður spurningum...</p>
         <button id="startButton">Byrja að birta spurningar</button>
 
-        <!-- Hide until quiz starts -->
         <div id="question-display" style="display:none">
           <p id="question-text">Spurning:</p>
 
-          <!-- Make this a button so it’s clickable & accessible -->
           <button id="answer-text" type="button" class="reveal">Sýna svar</button>
 
           <p id="status-text"></p>
@@ -45,7 +42,6 @@
           </div>
         </div>
 
-        <!-- Hide until finished -->
         <div id="quiz-finished" style="display:none">
           <h3>Spurningalisti kláraður!</h3>
           <button id="restartButton">Byrja aftur</button>

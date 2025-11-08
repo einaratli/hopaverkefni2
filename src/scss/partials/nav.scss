@@ -1,0 +1,26 @@
+@use "variables" as *;
+
+nav {
+  ul {
+    list-style: none;
+    padding: 15px 0 10px ;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  a {
+    text-decoration: none;
+    color: $gray-900;
+    padding: 8px 12px;
+    border: 1px solid $gray-400;
+    background-color: $white;
+    display: block;
+  }
+
+  li.active a,
+  a[aria-current="page"] {
+    font-weight: 700;
+    text-decoration: underline;
+  }
+}

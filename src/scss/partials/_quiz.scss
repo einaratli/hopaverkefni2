@@ -1,0 +1,56 @@
+@use "variables" as *;
+
+#quiz-area {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#question-display,
+#quiz-finished {
+  display: none;
+}
+
+#startButton {
+  display: none; 
+}
+
+#question-display {
+  padding: 1rem;
+  border: 1px solid $gray-400;
+  border-radius: $radius-md;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+#question-text {
+  font-size: 1.1em;
+  font-weight: bold; 
+  min-height: 50px;
+}
+
+#answer-text {
+  margin-top: 10px;
+  font-weight: bold;
+  color: $brand-blue; 
+  cursor: pointer;
+  border-top: 1px solid $gray-200;
+  padding-top: 5px;
+}
+
+#status-text {
+  min-height: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.navigation-buttons {
+  margin-top: 1rem;
+}
+
+#prevButton,
+#nextButton {
+  padding: 10px;
+}
+
+#prevButton {
+  margin-right: 10px;
+}
